@@ -4,3 +4,5 @@ firebase-admin
 flask_cors
 requests
 numpy
+scikit-learn
+pandas
