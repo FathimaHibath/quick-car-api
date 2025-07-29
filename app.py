@@ -13,11 +13,13 @@ CORS(app)
 
 # Initialize Firebase
 # Load Firebase credentials from environment variable
-firebase_key_json = os.environ.get('FIREBASE_KEY_JSON')
-if firebase_key_json is None:
-    raise ValueError("FIREBASE_KEY_JSON environment variable not set!")
+firebase_key_str = os.environ.get("FIREBASE_KEY")
 
-cred = credentials.Certificate(json.loads(firebase_key_json))
+if firebase_key_str is None:
+    raise ValueError("FIREBASE_KEY environment variable not set")
+
+firebase_key_dict = json.loads(firebase_key_str)
+cred = credentials.Certificate(firebase_key_dict)
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
