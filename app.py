@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Initialize Firebase
-cred = credentials.Certificate("c:/Users/fathi/AndroidStudioProjects/fixmyrideapp/hi/firebase_key.json")  # Load Firebase credentials
+cred = credentials.Certificate("firebase_key.json") # Load Firebase credentials
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
