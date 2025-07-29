@@ -12,7 +12,12 @@ app = Flask(__name__)
 CORS(app)
 
 # Initialize Firebase
-cred = credentials.Certificate("firebase_key.json") # Load Firebase credentials
+# Load Firebase credentials from environment variable
+firebase_key_json = os.environ.get('FIREBASE_KEY_JSON')
+if firebase_key_json is None:
+    raise ValueError("FIREBASE_KEY_JSON environment variable not set!")
+
+cred = credentials.Certificate(json.loads(firebase_key_json))
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
