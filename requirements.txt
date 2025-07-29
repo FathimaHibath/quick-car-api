@@ -3,3 +3,4 @@ gunicorn
 firebase-admin
 flask_cors
 requests
+numpy
