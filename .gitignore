@@ -1,1 +1,4 @@
-firebase_key.json
+
+serviceAccountKey.json
+__pycache__/
+.env
