@@ -6,6 +6,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from flask_cors import CORS
 import json
+import os
+
 
 # Initialize Flask App
 app = Flask(__name__)
